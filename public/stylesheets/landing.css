@@ -1,0 +1,82 @@
+body {
+  background-color: #000;
+}
+
+#landing-header {
+  z-index: 1;
+  position: relative;
+  text-align: center;
+  padding-top: 40vh;
+}
+
+#landing-header h1 {
+  color: #fff;
+}
+
+.slideshow { 
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.slideshow li { 
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-size: cover;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  opacity: 0;
+  z-index: 0;
+  animation: imageAnimation 50s linear infinite; 
+}
+
+.slideshow li:nth-child(1) { 
+  background-image: url(https://upload.wikimedia.org/wikipedia/commons/b/ba/Gilan_-_Asalem_-_Gisoum_-_panoramio.jpg) 
+}
+.slideshow li:nth-child(2) { 
+  background-image: url(https://media2.trover.com/T/5a9b8ab6af3fe0d06d00e3a2/fixedw_large_4x.jpg);
+  animation-delay: 10s; 
+}
+.slideshow li:nth-child(3) { 
+  background-image: url(https://yourshot.nationalgeographic.com/u/fQYSUbVfts-T7odkrFJckdiFeHvab0GWOfzhj7tYdC0uglagsDUd3V1ESaY3di36tRuDObuQRLqHZSCbSfU9Hcx_kSn04wcOW3WWWfctMyY_O9-5xiyNp6cLv95iY235zx2uPkd5sQ4nIRO0wNI-ptbHLZiFzXT9k3jTq6mZ7zLCp-_FOi0jmTOR2U42VtqFTxMIv65szmKkzd93ANmbVrEAZuqD7w/);
+  animation-delay: 20s; 
+}
+.slideshow li:nth-child(4) { 
+  background-image: url(https://www.atlantapcc.org/wp-content/uploads/2015/06/Kiasar-nature-northern-Iran.jpg);
+  animation-delay: 30s; 
+}
+.slideshow li:nth-child(5) { 
+  background-image: url(https://farm7.staticflickr.com/6067/6129565654_f85eb7961b_o.jpg);
+  animation-delay: 40s; 
+}
+
+@keyframes imageAnimation { 
+  0% { 
+    opacity: 0; 
+    animation-timing-function: ease-in;
+  }
+  10% {
+    opacity: 1;
+    animation-timing-function: ease-out;
+  }
+  20% {
+    opacity: 1
+  }
+  30% {
+    opacity: 0
+  }
+}
+
+/* Older browser support - .no-cssanimations class added by modernizr */
+.no-cssanimations .slideshow li {
+	opacity: 1;
+}
